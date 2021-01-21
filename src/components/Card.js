@@ -23,7 +23,17 @@ const Card = ({ data }) => {
         />
       ) : (
         <div className="w-full h-full flex flex-col items-center p-2">
-          <h1>{data.name}</h1>
+          <h1 className="font-bold text-lg mb-2">{data.name}</h1>
+          <h1 className="font-bold">Description</h1>
+          <h1 className="font-sm mb-2">
+            {data.description.substr(1, 200) + " ..."}
+          </h1>
+          <button
+            href={data.wikipedia_url}
+            className="font-bold text-center p-2 border-2 border-black rounded-md"
+          >
+            Wikipedia
+          </button>
         </div>
       )}
     </div>
